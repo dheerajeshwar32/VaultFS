@@ -336,3 +336,15 @@ async def websocket_endpoint(websocket: WebSocket):
     except Exception:
         manager.disconnect(websocket)
 
+
+# ------------------------------------------------------------------------------
+# Serve Built Frontend Bundle (Enables 1-Port Cloud Deployment)
+# ------------------------------------------------------------------------------
+
+from fastapi.staticfiles import StaticFiles
+
+frontend_dist = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "frontend", "dist"))
+if os.path.exists(frontend_dist):
+    app.mount("/", StaticFiles(directory=frontend_dist, html=True), name="frontend")
+
+

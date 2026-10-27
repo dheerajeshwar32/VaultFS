@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: vaultfs
+    env: docker
+    plan: free
+    region: oregon
+    healthCheckPath: /api/state
