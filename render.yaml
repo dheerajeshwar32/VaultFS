@@ -5,3 +5,4 @@ services:
     plan: free
     region: oregon
     healthCheckPath: /api/state
+
