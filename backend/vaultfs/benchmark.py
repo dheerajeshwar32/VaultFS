@@ -34,7 +34,7 @@ class BenchmarkRunner:
     def run_benchmark(self) -> Dict[str, Any]:
         """
         Run identical 25-step workload on 3 isolated temporary volumes.
-        Returns comparative analysis, individual metrics, and viva verdict.
+        Returns comparative analysis, individual metrics, and performance verdict.
         """
         methods = [
             (ALLOC_CONTIGUOUS, "CONTIGUOUS", "temp_bench_contig.img"),

@@ -134,7 +134,7 @@ export const TopCommandBar: React.FC<TopCommandBarProps> = ({
             }`}
           >
             <BookOpen className="w-3.5 h-3.5" />
-            <span>OS Guide & Viva</span>
+            <span>Architecture</span>
           </button>
         </div>
 

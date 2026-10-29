@@ -879,7 +879,7 @@ class VaultFSEngine:
 
     def inject_corruption(self) -> Dict[str, Any]:
         """
-        Inject 3 realistic disk errors for live faculty presentation:
+        Inject 3 realistic disk errors for resilience testing:
         1. Orphan Block Leak: Marks 3 free data blocks in Bitmap as 1 (Allocated) without inode ownership.
         2. Unmarked Allocated Block: Flips 1 active file data block to 0 (Free) in Bitmap.
         3. Superblock Counter Drift: Artificially drifts free_blocks in Superblock by +7.

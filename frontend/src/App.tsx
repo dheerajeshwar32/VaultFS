@@ -231,10 +231,10 @@ export default function App() {
               </div>
               <div>
                 <h1 className="text-xl font-extrabold text-white">
-                  VaultFS Operating System Architecture Guide & Viva Defense
+                  VaultFS Kernel Architecture Specification
                 </h1>
                 <p className="text-xs text-slate-400">
-                  Comprehensive reference for Operating Systems Module 6: File System Implementation.
+                  Low-level binary disk geometry, allocation invariants, and crash consistency specification.
                 </p>
               </div>
             </div>
@@ -287,12 +287,12 @@ export default function App() {
 
               <section className="space-y-2">
                 <h2 className="text-sm font-bold text-violet-400 uppercase tracking-wide">
-                  3. Key Viva Questions & Answers
+                  3. Kernel Invariants & Storage Reliability
                 </h2>
                 <div className="space-y-3">
                   <div className="bg-[#161B28]/60 p-3 rounded-xl border border-white/[0.04]">
                     <strong className="text-white block mb-1">
-                      Q: How is data persisted when the server restarts?
+                      Binary Persistence & Write Invariants
                     </strong>
                     <span>
                       Every file write directly seeks and writes binary bytes into <code className="text-cyan-300">disk.img</code> using Python's <code className="text-cyan-300">struct.pack</code> and immediately calls <code className="text-cyan-300">flush()</code>. On startup, the superblock is read directly from Sector 0 to restore state.
@@ -301,7 +301,7 @@ export default function App() {
 
                   <div className="bg-[#161B28]/60 p-3 rounded-xl border border-white/[0.04]">
                     <strong className="text-white block mb-1">
-                      Q: How does fsck detect and repair corruption?
+                      Crash Recovery & Inode Ground-Truth Traversal (FSCK)
                     </strong>
                     <span>
                       fsck performs a ground-truth traversal: it reads all 64 inodes, walks every contiguous span, linked pointer chain, and index block table to build the authoritative set of owned blocks. It compares this against Sector 1 (Bitmap) to detect orphan leaks and unmarked allocated blocks, then writes the corrected bitmap and superblock counters back to disk.
@@ -310,7 +310,7 @@ export default function App() {
 
                   <div className="bg-[#161B28]/60 p-3 rounded-xl border border-white/[0.04]">
                     <strong className="text-white block mb-1">
-                      Q: What happens during disk defragmentation?
+                      Compaction Mechanics & Dynamic Pointer Relocation
                     </strong>
                     <span>
                       VaultFS reads each active file's payload into memory, clears the data region, and compacts every file sequentially starting at Block 10. For linked files, pointer chains are rewritten to sequential addresses (b, b+1...). For indexed files, the index block is placed adjacent to its data blocks. This drops Head Seek Distance to minimum and restores a single contiguous free extent.

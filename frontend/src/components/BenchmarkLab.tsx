@@ -264,12 +264,12 @@ export const BenchmarkLab: React.FC = () => {
         </div>
       )}
 
-      {/* Automated Faculty Viva Summary Card */}
+      {/* Comparative Strategy Analysis Card */}
       <div className="bg-[#0F131D]/90 backdrop-blur-xl border border-white/[0.07] rounded-2xl p-6 shadow-[0_8px_32px_rgba(0,0,0,0.45)]">
         <div className="flex items-center gap-2 mb-3 pb-3 border-b border-white/[0.06]">
           <BookOpen className="w-5 h-5 text-cyan-400" />
           <h3 className="text-sm font-bold text-slate-200 uppercase tracking-wide">
-            Automated Faculty Viva Defense & Theoretical Analysis
+            Storage Strategy Trade-Off Analysis & Performance Verdict
           </h3>
         </div>
 

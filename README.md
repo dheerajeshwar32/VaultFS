@@ -77,7 +77,7 @@ All 14 tests run in under 2.5 seconds with 100% pass rates.
 
 ---
 
-## 3-Minute Faculty Presentation Script
+## 3-Minute Technical Demonstration Script
 
 1. **Format Volume**: Click **"Format"** in the top ribbon to demonstrate clean zeroing of `disk.img` and root inode (`/`) initialization.
 2. **Simulate Aging**: Click **"Simulate Aging"**. Explain how 14 files were written across Contiguous, Linked, and Indexed methods, 5 files were deleted to create checkerboard holes, and 3 files scattered across those holes. Point out the glowing violet and cyan pointer chains on the 16x16 grid.
@@ -85,7 +85,7 @@ All 14 tests run in under 2.5 seconds with 100% pass rates.
 4. **Trigger External Fragmentation**: Open **"+ New File"**, select **Contiguous (0)**, set size to **4,096 Bytes (8 blocks)**, and click Create. Show how VaultFS raises `ExternalFragmentationError` because no single contiguous extent can satisfy 8 blocks.
 5. **Defragment Disk**: Click **"Defrag"**. Watch the modal display before vs. after metrics showing External Fragmentation drop to `0.0%` and Head Seek Distance drop to minimum.
 6. **Inject Corruption & Heal**: Click **"Corrupt"** to flip bitmap bits and cause superblock counter drift (the health badge turns red). Click **"fsck Repair"** to scan inode ground truth, view the diagnostic anomaly report, and heal the volume back to green.
-7. **Benchmark Lab**: Switch to the **Benchmark Lab** tab, click **"Run Comparative Benchmark"**, and show the Recharts comparison and faculty viva summary card.
+7. **Benchmark Lab**: Switch to the **Benchmark Lab** tab, click **"Run Comparative Benchmark"**, and show the Recharts comparison and storage strategy evaluation card.
 
 ---
 
