@@ -2,6 +2,11 @@
 
 > **A Kernel-Grade, Persistent Binary File System in `disk.img` paired with an Obsidian-Themed React 18 Telemetry Workbench.**
 
+[![Live Production Demo](https://img.shields.io/badge/Live%20Demo-Render-46E3B7.svg?style=for-the-badge&logo=render)](https://vaultfs.onrender.com/)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-181717.svg?style=for-the-badge&logo=github)](https://github.com/dheerajeshwar32/VaultFS)
+
+> 🌐 **Live Production Deployment**: [https://vaultfs.onrender.com/](https://vaultfs.onrender.com/)
+
 Built for **Operating Systems (Module 6: File-System Implementation)** to empirically demonstrate **Contiguous**, **Linked**, and **Indexed** disk allocation trade-offs, external vs internal fragmentation, seek distance dynamics, live disk defragmentation, fault injection, and `fsck` repair.
 
 ---
